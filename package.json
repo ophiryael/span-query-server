@@ -1,0 +1,10 @@
+{
+  "name": "span-query",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ophiryael/span-query.git"
+  },
+  "author": "Ophir Yael (https://github.com/ophiryael)",
+  "private": true
+}
