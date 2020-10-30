@@ -4,7 +4,7 @@ import path from 'path';
 function createConfig() {
   return {
     client: 'pg',
-    connection: process.env.PG_CONNECTION_STRING,
+    connection: process.env.DB_CONNECTION_STRING,
     migrations: {
       tableName: 'knex_migrations',
       directory: getMigrationsDir(),
