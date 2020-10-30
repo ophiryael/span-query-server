@@ -7,6 +7,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('operation_name').notNullable();
     table.timestamp('start_time').notNullable();
     table.integer('duration').notNullable();
+    table.jsonb('original').notNullable();
   });
 }
 
