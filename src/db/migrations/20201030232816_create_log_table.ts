@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('span_id').notNullable().references('span.id');
     table.timestamp('timestamp').notNullable();
     table.string('key').notNullable();
-    table.string('string_value');
+    table.text('string_value');
     table.decimal('numeric_value');
     table.boolean('boolean_value');
   });
