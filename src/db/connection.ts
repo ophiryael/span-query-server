@@ -10,19 +10,11 @@ function createConfig() {
       directory: getMigrationsDir(),
       extension: 'ts',
     },
-    seeds: {
-      directory: getSeedsDir(),
-      extension: 'ts',
-    },
   };
 }
 
 function getMigrationsDir(): string {
   return path.join(__dirname, 'migrations');
-}
-
-function getSeedsDir(): string {
-  return path.join(__dirname, 'seeds');
 }
 
 export const dbKnex: Knex = Knex(createConfig());

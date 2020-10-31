@@ -1,4 +1,5 @@
 import { dbKnex } from './db/connection';
+import { ingestSpans } from './db/spans-ingestor';
 
 async function main(): Promise<void> {
   console.log('Initializing server...');
@@ -13,7 +14,7 @@ async function runDbTasks(): Promise<void> {
   await dbKnex.migrate.latest();
   const isSeeded = await isDbSeeded();
   if (!isSeeded) {
-    await dbKnex.seed.run();
+    await ingestSpans();
   }
 }
 
