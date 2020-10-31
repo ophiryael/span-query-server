@@ -15,6 +15,7 @@ async function runDbTasks(): Promise<void> {
   const isSeeded = await isDbSeeded();
   if (!isSeeded) {
     await ingestSpans();
+    console.log('Successfully seeded DB');
   }
 }
 
