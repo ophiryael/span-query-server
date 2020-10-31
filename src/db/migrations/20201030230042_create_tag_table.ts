@@ -2,7 +2,7 @@ import Knex from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable('tag', (table: Knex.TableBuilder) => {
-    table.uuid('id').notNullable().primary().defaultTo(knex.raw('uuid_generate_v4()'));
+    table.uuid('id').notNullable().primary();
     table.string('span_id').notNullable().references('span.id');
     table.string('key').notNullable();
     table.string('string_value');
