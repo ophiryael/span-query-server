@@ -27,7 +27,7 @@ interface TagOrLogCondition extends BaseCondition {
 interface BaseCondition {
   operator: 'equals' | 'greaterThan' | 'lessThan' | 'isTrue' | 'isFalse';
   value?: string | number;
-  subQuery: SpanQuery;
+  subQuery?: SpanQuery;
 }
 
 export type ClauseAdderMap = { [key in Condition['operator']]: ClauseCreator };
