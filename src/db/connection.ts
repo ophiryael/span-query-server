@@ -1,5 +1,6 @@
 import Knex from 'knex';
 import path from 'path';
+import { Model } from 'objection';
 
 function createConfig() {
   return {
@@ -18,3 +19,5 @@ function getMigrationsDir(): string {
 }
 
 export const dbKnex: Knex = Knex(createConfig());
+
+Model.knex(dbKnex);
