@@ -8,6 +8,7 @@
   "author": "Ophir Yael (https://github.com/ophiryael)",
   "private": true,
   "scripts": {
+    "start": "tsc && node -r dotenv/config ./dist/main.js",
     "dev": "tsc && concurrently -n \"ts,nodemon\" -c \"bgBlue,bgGreen\" \"tsc -w\" \"nodemon -r dotenv/config ./dist/main.js\"",
     "lint": "eslint --ext .js,.ts --max-warnings 0 ./src",
     "format": "prettier --write ./src",
