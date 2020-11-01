@@ -16,7 +16,7 @@ export async function ingestSpans(): Promise<void> {
 }
 
 function readAndFormatSpans(): Span[] {
-  const spansFilepath = path.join(__dirname, '..', '..', 'seed', 'spans.json');
+  const spansFilepath = path.join(__dirname, '../../seed/spans.json');
   const spansContent = fs.readFileSync(spansFilepath, 'utf8');
 
   // replace long ids with strings to avoid js floating point issues
