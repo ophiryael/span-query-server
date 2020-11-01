@@ -30,6 +30,7 @@ function createBaseQuery(limit: number): QueryBuilder<SpanModel> {
     .leftJoinRelated('[tags,logs]')
     .distinct('span.id as spanId')
     .select(['operation_name as operationName', 'start_time as startTime', 'duration as duration'])
+    .orderBy('start_time', 'desc')
     .limit(limit);
 }
 
