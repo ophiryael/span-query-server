@@ -5,7 +5,8 @@ import { Request, RequestHandler } from 'express';
 export const getSpanById: RequestHandler = async (req, res, next) => {
   try {
     const spanQuery = buildQuery(req);
-    res.send({ span: await spanQuery });
+    const [span] = await spanQuery;
+    res.send({ span });
   } catch (error) {
     next(error);
   }
